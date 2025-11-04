@@ -6,6 +6,7 @@ import _ from "lodash";
 import User from "./User";
 import Question from "./Question";
 import ModalResult from "./ModalResult";
+import RightContent from "./Content/RightContent";
 
 const DetailQuiz = () => {
   const params = useParams();
@@ -203,7 +204,13 @@ const DetailQuiz = () => {
         </div>
 
         {/* 📌 Cột phải (chưa dùng) */}
-        <div className="right-content">213123</div>
+        <div className="right-content">
+          <RightContent
+            dataQuiz={dataQuiz}
+            handleFinishQuiz={handleFinishQuiz}
+            setIndex={setIndex}
+          />
+        </div>
         <ModalResult
           show={isShowModalResult}
           setShow={setIsShowModalResult}

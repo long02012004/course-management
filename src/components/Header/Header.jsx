@@ -1,17 +1,26 @@
 import { NavLink, useNavigate } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { logout } from "../../services/ApiServices";
+import { toast } from "react-toastify";
+import { doLogout } from "../../redux/action/userAction";
+import Language from "./language";
 
 const Header = () => {
   const isAuthenticated = useSelector((state) => state.user.isAuthenticated);
   const account = useSelector((state) => state.user.account);
+  console.log("check account:", account);
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
-  const handleLogout = () => {
-    // Xoá token hoặc flag login
-    localStorage.removeItem("isLoggedIn");
-    localStorage.removeItem("token"); // nếu bạn lưu token
-
-    navigate("/login");
+  const handleLogout = async () => {
+    const res = await logout(account.email, account.refresh_token);
+    console.log("check logout:", res);
+    if (res && res.data.EC === 0) {
+      dispatch(doLogout());
+      navigate("./login");
+    } else {
+      toast.error(res.EM);
+    }
   };
 
   const handleClickLogin = () => {
@@ -82,22 +91,23 @@ const Header = () => {
                 </a>
                 <ul className="dropdown-menu dropdown-menu-end">
                   <li>
-                    <a
-                      className="dropdown-item"
-                      href="#"
-                      onClick={handleLogout} // ✅ sửa thành handleLogout
-                    >
-                      LogOut
+                    <a className="dropdown-item" href="#">
+                      Profile
                     </a>
                   </li>
                   <li>
-                    <a className="dropdown-item" href="#">
-                      Profile
+                    <a
+                      className="dropdown-item"
+                      href="#"
+                      onClick={handleLogout}
+                    >
+                      LogOut
                     </a>
                   </li>
                 </ul>
               </li>
             )}
+            <Language />
           </ul>
         </div>
       </div>

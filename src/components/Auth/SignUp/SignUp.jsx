@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { postSignUp } from "../../../services/ApiServices";
 import { toast } from "react-toastify";
 import { VscEye, VscEyeClosed } from "react-icons/vsc";
+import Language from "../../Header/language";
 
 const Signup = () => {
   const [email, setEmail] = useState("");
@@ -49,6 +50,7 @@ const Signup = () => {
       <div className="header">
         <span> Already have an account?</span>
         <button onClick={() => navigate("/login")}>Log in</button>
+        <Language />
       </div>
       <div className="title col-4 mx-auto">Hỏi Dân IT &amp; Eric</div>
       <div className="welcome col-4 mx-auto">Start your journey?</div>

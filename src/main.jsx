@@ -10,6 +10,8 @@ import { PersistGate } from "redux-persist/integration/react";
 import "react-perfect-scrollbar/dist/css/styles.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+import "react-awesome-lightbox/build/style.css";
+
 
 createRoot(document.getElementById("root")).render(
   <Provider store={store}>

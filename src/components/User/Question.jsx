@@ -1,5 +1,7 @@
 import _ from "lodash";
 import "./DetailQuiz.scss";
+import Lightbox from "react-awesome-lightbox";
+import { useState } from "react";
 
 // Component Question nhận 3 props từ cha:
 // - data: chứa thông tin 1 câu hỏi + danh sách đáp án
@@ -17,6 +19,7 @@ const Question = ({ data, index, handleChechBox }) => {
   const handleChechBoxChange = (e, aId, qId) => {
     handleChechBox(aId, qId);
   };
+  const [isPreviewImage, setIsPreviewImage] = useState(false);
 
   return (
     <>
@@ -24,9 +27,18 @@ const Question = ({ data, index, handleChechBox }) => {
       {data.image ? (
         <div className="q-image">
           <img
+            style={{ cursor: "pointer" }}
+            onClick={() => setIsPreviewImage(true)}
             src={`data:image/jpeg;base64,${data.image}`}
             alt={data.questionDescription}
           />
+          {isPreviewImage && (
+            <Lightbox
+              image={`data:image/jpeg;base64,${data.image}`}
+              title={"Question Image"}
+              onClose={() => setIsPreviewImage(false)}
+            />
+          )}
         </div>
       ) : (
         // Nếu không có ảnh thì vẫn tạo 1 khung rỗng để bố cục không bị lệch

@@ -1,31 +1,32 @@
-.homepage-container{
-    .homepage-content{
-        display: flex;
-        position: relative;
-        padding: 100px;
-        width: 50%;
-        flex-direction: column;
-        gap: 20px;
+.homepage-container {
+  .homepage-content {
+    display: flex;
+    position: relative;
+    padding: 100px;
+    width: 50%;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .homepage-title {
+    font-size: 45px;
+    font-weight: 700;
+    color: black;
+  }
+  .homepage-description {
+    font-size: 30px;
+    color: rgb(44, 41, 41);
+  }
+  .homepage-button {
+    border-radius: 5px;
+    padding: 0 15px;
+    color: white;
+    background-color: #303030;
+    height: 30px;
+    width: 150px;
+    border: none;
+    &:hover {
+      background: black;
     }
-    .homepage-title{
-        font-size: 45px;
-        font-weight: 700;
-        color: black;
-    }
-    .homepage-description{
-        font-size: 30px;
-        color: rgb(44, 41, 41);
-    }
-    .homepage-button{
-       border-radius: 5px;
-       padding: 0 15px;
-       color: white;
-       background-color: #303030;
-       height: 30px;
-       width: 150px;
-       border: none;
-       &:hover{
-        background: black;
-       }
-    }
+  }
+
 }
