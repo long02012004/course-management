@@ -1,4 +1,3 @@
-import { refresh } from "aos";
 import axios from "../utils/AxiosCustomize.jsx";
 import qs from "qs";
 const postCreateNewUser = (email, password, username, role, image) => {
@@ -126,6 +125,9 @@ const logout = (email, refresh_token) => {
     refresh_token,
   });
 };
+const getOverview = () => {
+  return axios.get(`/api/v1/overview`);
+};
 export {
   postCreateNewUser,
   getAllUser,
@@ -147,4 +149,5 @@ export {
   getQuizWithQA,
   postUpsertQA,
   logout,
+  getOverview,
 };

@@ -1,0 +1,20 @@
+{
+  "homepage": {
+    "title1": "Welcome to Our Website",
+    "title2": "Discover amazing content and connect with our community.",
+    "title3": {
+      "login": "Explore Now"
+    }
+  },
+  "signUp": {
+    "header": "Already have an account?",
+    "login": "Log in",
+    "title": "Quang Long ",
+    "welcome": "Start your journey?",
+    "email": "Email",
+    "password": "Password",
+    "username": "Username",
+    "btnSubmit": "  Create my free account",
+    "back": " Go to Homepage"
+  }
+}

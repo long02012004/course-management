@@ -8,7 +8,24 @@
   .admin-content {
     width: 100%;
     .admin-header {
-      border: 1px solid green;
+      border-bottom: 1px solid #ccc;
+      height: 60px !important;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 20px 0 10px;
+      list-style: none;
+      .left-side {
+        font-size: 24px;
+        cursor: pointer;
+        color: hotpink;
+      }
+      .right-side {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        flex-direction: row-reverse;
+      }
     }
   }
   .admin-main {

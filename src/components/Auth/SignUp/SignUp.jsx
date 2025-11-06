@@ -5,8 +5,11 @@ import { postSignUp } from "../../../services/ApiServices";
 import { toast } from "react-toastify";
 import { VscEye, VscEyeClosed } from "react-icons/vsc";
 import Language from "../../Header/language";
+import { useTranslation, Trans } from "react-i18next";
 
 const Signup = () => {
+  // Chuyển đổi ngôn ngữ
+  const { t } = useTranslation();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [username, setUsername] = useState("");
@@ -48,15 +51,15 @@ const Signup = () => {
   return (
     <div className="register-container">
       <div className="header">
-        <span> Already have an account?</span>
-        <button onClick={() => navigate("/login")}>Log in</button>
+        <span> {t("signUp.header")}</span>
+        <button onClick={() => navigate("/login")}>{t("signUp.login")}</button>
         <Language />
       </div>
-      <div className="title col-4 mx-auto">Hỏi Dân IT &amp; Eric</div>
-      <div className="welcome col-4 mx-auto">Start your journey?</div>
+      <div className="title col-4 mx-auto">{t("signUp.title")} </div>
+      <div className="welcome col-4 mx-auto">{t("signUp.welcome")}</div>
       <div className="content-form col-4 mx-auto">
         <div className="form-group">
-          <label>Email (*)</label>
+          <label>{t("signUp.email")}(*)</label>
           <input
             type={"email"}
             className="form-control"
@@ -65,7 +68,7 @@ const Signup = () => {
           />
         </div>
         <div className="form-group pass-group">
-          <label>Password (*)</label>
+          <label>{t("signUp.password")}(*)</label>
           <input
             type={isShowPassword ? "text" : "password"}
             className="form-control"
@@ -87,7 +90,7 @@ const Signup = () => {
           )}
         </div>
         <div className="form-group">
-          <label>Username</label>
+          <label>{t("signUp.username")}</label>
           <input
             type={"text"}
             className="form-control"
@@ -97,7 +100,7 @@ const Signup = () => {
         </div>
         <div>
           <button className="btn-submit" onClick={() => handleRegister()}>
-            Create my free account
+            {t("signUp.btnSubmit")}
           </button>
         </div>
         <div className="text-center">
@@ -107,7 +110,7 @@ const Signup = () => {
               navigate("/");
             }}
           >
-            &#60;&#60; Go to Homepage
+            &#60;&#60; {t("signUp.back")}
           </span>
         </div>
       </div>

@@ -3,8 +3,11 @@ import styles from "./Home.module.scss";
 import { Link, Outlet, NavLink } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { useTranslation, Trans } from "react-i18next";
 
 const HomePage = () => {
+  const { t } = useTranslation();
+
   const isAuthenticated = useSelector((state) => state.user.isAuthenticated);
   const navigate = useNavigate();
   return (
@@ -13,16 +16,14 @@ const HomePage = () => {
         <source src={VideoHomePage} type="video/mp4" />
       </video>
       <div className={styles["homepage-content"]}>
-        <h1 className={styles["homepage-title"]}>Welcome to Our Website</h1>
-        <p className={styles["homepage-description"]}>
-          Discover amazing content and connect with our community.
-        </p>
+        <h1 className={styles["homepage-title"]}>{t("homepage.title1")}</h1>
+        <p className={styles["homepage-description"]}>{t("homepage.title2")}</p>
         {isAuthenticated === false ? (
           <button
             className={styles["homepage-button"]}
             onClick={() => navigate("./login")}
           >
-            Explore Now
+            {t("homepage.title3.login")}
           </button>
         ) : (
           <button

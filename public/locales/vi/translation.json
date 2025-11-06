@@ -1,0 +1,20 @@
+{
+  "homepage": {
+    "title1": "Chào mừng đến với trang web của chúng tôi ",
+    "title2": "Khám phá nội dung tuyệt vời và kết nối với cộng đồng của chúng tôi.",
+    "title3": {
+      "login": "Khám phá ngay"
+    }
+  },
+  "signUp": {
+    "header": "Bạn đã có tài khoản?",
+    "login": "Đăng Nhập",
+    "title": "Quang Long ",
+    "welcome": "Bắt đầu hành trình của bạn?",
+    "email": "Email",
+    "password": "Mật khẩu",
+    "username": "Tên người dùng",
+    "btnSubmit": "Tạo tài khoản miễn phí của tôi",
+    "back": " Quay lại trang home"
+  }
+}
